@@ -31,9 +31,10 @@ def BGRRoiMeanSigma(roi):
 from skimage import feature as f
 import numpy as np
 
-nbPoints = 16
-radius = 2
+nbPoints = 8
+radius = 1
 METHOD = "default"
+#METHOD = "uniform"
 
 def LBPRoiMeanSigma(roi):
 	grayRoi = cv.cvtColor(roi, cv.COLOR_BGR2GRAY)

@@ -43,9 +43,7 @@ class newParticleTracker:
 		else:
 			flow = cv.calcOpticalFlowFarneback(prvs[a:b,c:d],nxt[a:b,c:d], None, 0.5, 3, 15, 3, 5, 1.2, 0)
 			dx = np.mean(flow[...,0])
-			#stdx = np.std(flow[...,0])
 			dy = np.mean(flow[...,1])
-			#stdy = np.std(flow[...,1])
 			for i in range(self.nbPart):
 				self.particle[i][0] += g(dx, 2.0)
 				self.particle[i][1] += g(dy, 2.0)

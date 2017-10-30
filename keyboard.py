@@ -25,7 +25,8 @@ def loop(k, env):
 	if k == ord('q'):
 		return 0
 	else:
-		#Gestion taille focus (rectangles vert et bleu)
+		#Gestion taille des focus rectangulaires
+		#	vert->HistogramMoments et bleu->ParticleTrackers
 		if k == ord('9') and (pas == 8 or pas == coef * 8):
 				pas = coef * 8 if pas == 8 else 8
 		if k == ord('7') and (pas == 8 or pas == 8 / coef):
@@ -41,13 +42,13 @@ def loop(k, env):
 		#Print infos env
 		if k == ord('i'):
 			printEnvInfos(env)
-		#Reset histogram moments
+		#Reset histogramMoments
 		if k == ord('h'):
 			env[5] = []
 		#Destruction de tous les trackers
 		if k == ord('p'):
 			env[6] = []
-		#Pause sur la frame courante
+		#Lecture/Pause
 		if k == ord(' '):
 			env[7] = 1 if env[7] == 0 else 0
 		return 1
