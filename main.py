@@ -12,7 +12,7 @@ from utils import killMulti
 #time.sleep(0.5)
 #cap.set(3, winSize)
 #cap.set(4, winSize)
-cap = cv.VideoCapture("../mp4/foot.mp4")
+cap = cv.VideoCapture("./foot.mp4")
 
 
 # => env= [x,y,w/2,h/2,bgrFrame,roiMeanSigmaTmp,particleTrackers, PAUSE, lbpFrame]
