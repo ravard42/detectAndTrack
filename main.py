@@ -13,13 +13,13 @@ cap = cv.VideoCapture("./foot.mp4")
 
 #Description de la variable d'environnement{
 #	=> env= [x,y,w/2,h/2,bgrFrame,roiMeanSigmaTmp,particleTrackers, PAUSE, lbpFrame]
-#		x, y 					:	coords curseur souris temps reel
-#		w/2, h/2				:	demi-largeur et demi-hauteur respectives du rectangle de focus
-#		bgrFrame				:	frame principale de lecture en canaux rgb
-#		roiMeanSigmaTmp	:	pointeur de stockage des moments (moyenne, ecartype) pour histogrammes RGB et LBP
-#		particleTrackers	:	pointeur de stockage des instances de la classe particleTracker
-#		LECTURE on/off		:	1 <=> LECTURE / 0 <=> PAUSE -_-'
-#		lbpFrame				:	frame de lecture en mode LBP <-> local Binary Pattern
+#	         x, y             :   coords curseur souris temps reel
+#	         w/2, h/2         :   demi-largeur et demi-hauteur respectives du rectangle de focus
+#	         bgrFrame         :   frame principale de lecture en canaux rgb
+#	         roiMeanSigmaTmp  :   pointeur de stockage des moments (moyenne, ecartype) pour histogrammes RGB et LBP
+#	         particleTrackers :   pointeur de stockage des instances de la classe particleTracker
+#	         LECTURE on/off   :   1 <=> LECTURE / 0 <=> PAUSE -_-'
+#	         lbpFrame         :   frame de lecture en mode LBP <-> local Binary Pattern
 #}
 
 env = [-42,-42,4,8,None,[],[], 1, None]
