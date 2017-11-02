@@ -44,23 +44,23 @@ mouse.py
 	Gere les appels souris
 
 	1)click gauche(focus vert):
-	     selection des histogrammes R,G,B (et LBP si actif) 
-	     a partir desquels on calculera les moments (moyenne et ecartype)
+	     Selection des histogrammes R,G,B (et LBP si actif) 
+	     On calculera ensuite leurs moments (moyenne et ecartype)
 	     -> cf histo.py
 	2)click droit(focus bleu):
-	     envoi des particleTrackers
+	     Envoi des particleTrackers
 	     -> cf particleClass.py
 
 <------------------------------>
 
 histo.py
-	calcule les moments a partir des histogrammes selectionnes
-		1) BGRRoiMeanSigma 
-				renvoie les moyennes et ecarts types respectifs des canaux B G et R 
-				de la RegionOfImage (ROI) selectionnee
-		2) LBPRoiMeanSigma
-				renvoie la moyenne et l'ecart du LBP
-				de la ROI selectionnee
+	Calcule les moments a partir des histogrammes selectionnes
+
+	1) BGRRoiMeanSigma 
+	     Renvoie les moyennes et ecarts types respectifs des canaux B G et R 
+	     de la RegionOfImage (ROI) selectionnee
+	2) LBPRoiMeanSigma
+	     Renvoie la moyenne et l'ecart du LBP de la ROI selectionnee
 
 <------------------------------>
 
