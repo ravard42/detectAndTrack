@@ -26,9 +26,9 @@ keyboard.py
 	        9      |	apply bigStep	(step *= coef)
 	        0      |	apply defaultStep (retour a la valeur de depart)
 	 2) autres:
-	     touches	|	action
+	     touches   |	action
 	     ------------------
-	      espace	|	lecture on/off
+	      espace   |	lecture on/off
 	        h      |	clear env[5]
 	        p      |	clear env[6]
 	        i      |	print info env
