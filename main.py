@@ -16,13 +16,13 @@ cap = cv.VideoCapture("./foot.mp4")
 #		x, y 					:	coords curseur souris temps reel
 #		w/2, h/2				:	demi-largeur et demi-hauteur respectives du rectangle de focus
 #		bgrFrame				:	frame principale de lecture en canaux rgb
-#		roiMeanSigmaTmp	:	pointeur de stockage des moments
+#		roiMeanSigmaTmp	:	pointeur de stockage des moments (moyenne, ecartype) pour histogrammes RGB et LBP
 #		particleTrackers	:	pointeur de stockage des instances de la classe particleTracker
-#		LECTURE				:	1 <=> LECTURE / 0 <=> PAUSE -_-'
+#		LECTURE on/off		:	1 <=> LECTURE / 0 <=> PAUSE -_-'
 #		lbpFrame				:	frame de lecture en mode LBP <-> local Binary Pattern
 #}
 
-env = [-42,-42,2,2,None,[],[], 1, None]
+env = [-42,-42,4,8,None,[],[], 1, None]
 cv.namedWindow('win', 0)
 cv.setMouseCallback('win', focus, env)
 
@@ -32,6 +32,7 @@ nxtGray = None
 
 while 1:
 	#<--LECTURE-->
+	
 	if env[7] == 1:
 		if nxtGray is not None:
 			prvsGray = nxtGray
@@ -46,6 +47,11 @@ while 1:
 		#if len(env[5]) != 0:
 		#	detector(env)
 		#<-->
+		
+		#<--LPBFrame-->
+		#env[8] = f.local_binary_pattern(nxtGray, histo.nbPoints, histo.radius, histo.METHOD)
+		#env[8] = env[8].astype(np.uint8)
+		#<-->
 
 		#<--particleFilter-->
 		if len(env[6]) != 0:	
@@ -59,14 +65,11 @@ while 1:
 			killMulti(env[6])
 		#<-->
 		
-		#<--LPBFrame-->
-		#env[8] = f.local_binary_pattern(nxtGray, histo.nbPoints, histo.radius, histo.METHOD)
-		#env[8] = env[8].astype(np.uint8)
-		#<-->
 
-	#<--LECTURE-->
+	#<-END--LECTURE-->
 	
-	#<--Draw and display-->
+	#<--DRAW-DISPLAY-and-LOOP-->
+
 	a,b,c,d = env[1]-env[3],env[1]+env[3],env[0]-env[2],env[0]+env[2]
 	if len(env[5]) == 0:
 		cv.rectangle(env[4], (c,a), (d,b), (0,255,0), 1)
@@ -75,13 +78,15 @@ while 1:
 	if len(env[6]) != 0:
 		for pTrack in env[6]:
 			pTrack.draw(env)
+	
 	cv.imshow('win', env[4])
 	if env[8] is not None:
 		cv.imshow("LBPFrame", env[8])
-	#<-->
 
 	env[4] = savedForPause.copy()
 	if not loop(cv.waitKey(30), env):
 		break
+	
+	#<--END--DRAW-DISPLAY-and-LOOP-->
 
 cv.destroyAllWindows()

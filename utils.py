@@ -1,5 +1,7 @@
 import math as m
 
+fusionDist = 5
+
 def dist(p, x, y):
 	return m.sqrt(pow(p.x - x, 2) + pow(p.y - y, 2))
 
@@ -19,7 +21,7 @@ def killMulti(part):
 		if toKill.count(i):
 			continue
 		for j in range(i+1, len(part)):
-			if dist(part[i], part[j].x, part[j].y) < 5:
+			if dist(part[i], part[j].x, part[j].y) < fusionDist:
 				toKill.append(j)
 	for index, value in enumerate(toKill):
 		part.remove(part[value - index])

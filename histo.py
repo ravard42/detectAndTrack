@@ -34,17 +34,13 @@ import numpy as np
 nbPoints = 8
 radius = 1
 METHOD = "default"
-#METHOD = "uniform"
 
 def LBPRoiMeanSigma(roi):
 	grayRoi = cv.cvtColor(roi, cv.COLOR_BGR2GRAY)
 	lbp = f.local_binary_pattern(grayRoi, nbPoints, radius, METHOD)
 	lbp = lbp.reshape(lbp.shape[0],lbp.shape[1],1)
 	lbp = lbp.astype(np.uint8)
-	#if METHOD = 'default'
 	hist = cv.calcHist([lbp], [0], None, [256], [0,256])
-	#if METHOD = 'uniform'
-	#hist = cv.calcHist([lbp], [0], None, [nbPoints + 2], [0,nbPoints + 2])
 	mu = histMean(hist)
 	sigma = histDeviation(hist, mu)
 	return [mu, sigma]

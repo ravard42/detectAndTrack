@@ -1,4 +1,5 @@
-pas = 8
+step = 8
+saveStep = step
 coef = 4
 
 def printEnvInfos(env):
@@ -21,24 +22,26 @@ def printEnvInfos(env):
 			print "nombre de trackers en action : {}".format(len(env[6]))
 
 def loop(k, env):
-	global pas, coef
+	global step, coef
 	if k == ord('q'):
 		return 0
 	else:
 		#Gestion taille des focus rectangulaires
 		#	vert->HistogramMoments et bleu->ParticleTrackers
-		if k == ord('9') and (pas == 8 or pas == coef * 8):
-				pas = coef * 8 if pas == 8 else 8
-		if k == ord('7') and (pas == 8 or pas == 8 / coef):
-				pas = 8 / coef if pas == 8 else 8
+		if k == ord('9'):
+				step = saveStep * coef
+		if k == ord('7'):
+				step = saveStep / coef
+		if k == ord('0'):
+				step = saveStep
 		if k == ord('6'):
-			env[2] += pas
-		if k == ord('4') and env[2] > pas:
-			env[2] -= pas
+			env[2] += step
+		if k == ord('4') and env[2] > step:
+			env[2] -= step
 		if k == ord('8'):
-			env[3] += pas
-		if k == ord('2') and env[3] > pas:
-			env[3] -= pas
+			env[3] += step
+		if k == ord('2') and env[3] > step:
+			env[3] -= step
 		#Print infos env
 		if k == ord('i'):
 			printEnvInfos(env)

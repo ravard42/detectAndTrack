@@ -12,6 +12,10 @@ from utils import dist
 	
 class newParticleTracker:
 	nbPart = 50
+	stdMove = 2.3
+	seqFrame = 20
+	maxDisp = 140
+	
 	def __init__(self, x, y, w2, h2, histMoments):
 		self.x = x
 		self.y = y
@@ -45,8 +49,8 @@ class newParticleTracker:
 			dx = np.mean(flow[...,0])
 			dy = np.mean(flow[...,1])
 			for i in range(self.nbPart):
-				self.particle[i][0] += g(dx, 2.0)
-				self.particle[i][1] += g(dy, 2.0)
+				self.particle[i][0] += g(dx, self.stdMove)
+				self.particle[i][1] += g(dy, self.stdMove)
 		return 1
 
 	def gaussianWeight(self, env):
@@ -68,11 +72,11 @@ class newParticleTracker:
 		return 1
 	
 	def calcParticleDispersion(self, particles):
-		if self.disp[0] < 5:
+		if self.disp[0] < self.seqFrame:
 			self.disp[1] += np.std(self.particle[...,0]) + np.std(self.particle[...,1])
 			self.disp[0] += 1
 		else:
-			if self.disp[1] > 23:
+			if self.disp[1] > self.maxDisp:
 				particles.remove(self)
 			else:
 				self.disp[1] = 0
