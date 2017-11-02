@@ -41,15 +41,15 @@ keyboard.py
 <------------------------------>
 
 mouse.py
-	gere les appels souris
-		1)click gauche(focus vert):
-			selection des histogrammes R,G,B (et LBP si actif) 
-			a partir desquels on calculera les moments (moyenne et ecartype)
-			-> cf histo.py
-		2)click droit(focus bleu):
-			envoi des particleTrackers
-			-> cf particleClass.py
+	Gere les appels souris
 
+	1)click gauche(focus vert):
+	     selection des histogrammes R,G,B (et LBP si actif) 
+	     a partir desquels on calculera les moments (moyenne et ecartype)
+	     -> cf histo.py
+	2)click droit(focus bleu):
+	     envoi des particleTrackers
+	     -> cf particleClass.py
 
 <------------------------------>
 
