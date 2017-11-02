@@ -65,29 +65,27 @@ histo.py
 <------------------------------>
 
 particleClass.py
-	patron de classe des particleTrackers
-	trois etapes fondamentales dans l'elaboration d'un particleFilter
+	Patron de classe des particleTrackers
+	Trois etapes fondamentales dans l'elaboration d'un particleFilter
 		
-		1) modeliser le mouvement des particules
+	1) Modeliser le mouvement des particules
 				
-				principe				: denseOpticalFlow
-				methode de class 	: moveP
+	     principe          : denseOpticalFlow
+	     methode de class  : moveP
 		
-		2) donner un poids probabiliste a chacune des particules du tracker 
-				fonction des mesures respectives des particules
-					B, G, R (et LBP si actif)
-				et des moments retenus pour le tracking
-					(self.BGRHMs et self.LBPHMs si actif) 
+	2) Donner un poids probabiliste a chacune des particules du tracker 
+	   fonction des mesures respectives des particules B, G, R (et LBP si actif)
+	         et des moments retenus pour le tracking (self.BGRHMs et self.LBPHMs) 
 				
-				note : LBP mal gerE donc desactivE
+	     note : LBP mal gerE donc desactivE
 				
-				principe				: central limit theorem ? 
-				methode de classe : gaussianWeight
+	     principe          : central limit theorem ? 
+	     methode de classe : gaussianWeight
 		
-		3) redistribuer les particlues en fonction de leur poids 
+	3) Redistribuer les particules en fonction de leur poids 
 				
-				principe 			: cf https://salzis.wordpress.com/2015/05/25/particle-filters-with-python/
-				methode de classe : resample
+	     principe          : cf https://salzis.wordpress.com/2015/05/25/particle-filters-with-python/
+	     methode de classe : resample
 		
 	parametres:
 	     1) particules par tracker (default nbPart=50)
