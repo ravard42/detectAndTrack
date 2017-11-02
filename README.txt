@@ -26,6 +26,7 @@ keyboard.py
 	        7      |  apply tinyStep (step /= coef)
 	        9      |  apply bigStep	(step *= coef)
 	        0      |  apply defaultStep (retour a la valeur de depart)
+
 	 2) autres:
 
 	     touches   |   action
