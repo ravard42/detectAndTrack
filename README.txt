@@ -98,11 +98,11 @@ particleClass.py
 <------------------------------>
 
 detector.py
-	detecte le mouvement par soustraction de frame et tente une automatisation de l'envoi des trackers
+	Detecte le mouvement par soustraction de frame et tente une automatisation de l'envoi des trackers
 
-		parametres:
-			1) minArea, representant l'amplitude que le mouvement doit avoir pour etre retenu (default 25)
-			2) toutes les options du createBackgroundSubtractorMOG (default (3,0.1,3,7))
-			3) l'amplitude du gaussianBlur, du threshold et du dilate ((15,15), 42, 2)
-			4) minDist requise avec les trackers avoisinant pour en creer un nouveau (default 20) 
-				fusionDist dans utils.py definissant la distance max de fusion des trackers (default 5)
+	parametres:
+	     1) minArea, representant l'amplitude que le mouvement doit avoir pour etre retenu (default 25)
+	     2) toutes les options du createBackgroundSubtractorMOG (default (3,0.1,3,7))
+	     3) l'amplitude du gaussianBlur, du threshold et du dilate ((15,15), 42, 2)
+	     4) minDist requise avec les trackers avoisinant pour en creer un nouveau (default 20) 
+	        fusionDist dans utils.py definissant la distance max de fusion des trackers (default 5)
