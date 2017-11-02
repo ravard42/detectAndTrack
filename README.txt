@@ -16,6 +16,7 @@ keyboard.py
 	gere les appels clavier
 	 1) taille de la fenetre de focus:
 	    (step=8, coef=4) par default
+
 	     touches   |   action
 	     ------------------
 	        4      |  -step horizontally
@@ -26,6 +27,7 @@ keyboard.py
 	        9      |  apply bigStep	(step *= coef)
 	        0      |  apply defaultStep (retour a la valeur de depart)
 	 2) autres:
+
 	     touches   |   action
 	     ------------------
 	      espace   |  lecture on/off
