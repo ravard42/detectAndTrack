@@ -3,9 +3,9 @@ Petite explication du fonctionnement et de l'architecture du programme.
 <------------------------------>
 
 main.py
-		->	A-playerSubtractDetector:	off
-		->	B-LBPFrame:						off
-		->	C-particleFilter:				on
+		->	A-playerSubtractDetector: off
+		->	B-LBPFrame					: off
+		->	C-particleFilter			: on
 	NB	: le script est dans cet etat par default pour une meilleure prise en main... ahaha ^^
 
 	voir le script et ses #comms pour plus de details 
