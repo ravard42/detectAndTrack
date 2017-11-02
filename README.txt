@@ -18,21 +18,21 @@ keyboard.py
 	    (step=8, coef=4) par default
 	     touches   |   action
 	     ------------------
-	        4		|	-step horizontally
-	        6		|	+step horizontally
-	        2		|	-step vertically
-	        8		|	+step vertically
-	        7		|	apply tinyStep (step /= coef)
-	        9		|	apply bigStep	(step *= coef)
-	        0		|	apply defaultStep (retour a la valeur de depart)
+	        4      |	-step horizontally
+	        6      |	+step horizontally
+	        2      |	-step vertically
+	        8      |	+step vertically
+	        7      |	apply tinyStep (step /= coef)
+	        9      |	apply bigStep	(step *= coef)
+	        0      |	apply defaultStep (retour a la valeur de depart)
 	 2) autres:
 	     touches	|	action
 	     ------------------
 	      espace	|	lecture on/off
-	        h		|	clear env[5]
-	        p		|	clear env[6]
-	        i		|	print info env
-	        q		|	exit
+	        h      |	clear env[5]
+	        p      |	clear env[6]
+	        i      |	print info env
+	        q      |	exit
 
 <------------------------------>
 
