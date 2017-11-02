@@ -89,11 +89,10 @@ particleClass.py
 				principe 			: cf https://salzis.wordpress.com/2015/05/25/particle-filters-with-python/
 				methode de classe : resample
 		
-		parametres:
-			1) particules par tracker (default nbPart=50)
-			2) constante de dispersion gaussienne dans moveP (default stdMove = 2.3)
-			3) seqFrame et maxDisp dans calcParticleDispersion (default 20 et 140)
-
+	parametres:
+	     1) particules par tracker (default nbPart=50)
+	     2) constante de dispersion gaussienne dans moveP (default stdMove = 2.3)
+	     3) seqFrame et maxDisp dans calcParticleDispersion (default 20 et 140)
 
 <------------------------------>
 
