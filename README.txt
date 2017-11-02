@@ -66,7 +66,8 @@ histo.py
 
 particleClass.py
 	Patron de classe des particleTrackers
-	Trois etapes fondamentales dans l'elaboration d'un particleFilter
+
+	Trois etapes fondamentales dans l'elaboration d'un particleFilter:
 		
 	1) Modeliser le mouvement des particules
 				
@@ -84,7 +85,7 @@ particleClass.py
 		
 	3) Redistribuer les particules en fonction de leur poids 
 				
-	     principe          : cf https://salzis.wordpress.com/2015/05/25/particle-filters-with-python/
+	     principe          : cf -> https://salzis.wordpress.com/2015/05/25/particle-filters-with-python/
 	     methode de classe : resample
 		
 	parametres:
